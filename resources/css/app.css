@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* --- PEGA ESTO DEBAJO DE LAS LÍNEAS @TAILWIND --- */
+
+/* Fuente personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilos para el contenido del contrato */
+.contract-content h3 {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.contract-content p, .contract-content li {
+    margin-bottom: 0.75rem;
+}
+.contract-content ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+/* Estilos de tarjetas y pestañas */
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: #e5e7eb;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+.tab-button.active {
+    background-color: #ffffff;
+    border-bottom: 2px solid #3b82f6;
+}
+.epp-button.selected {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+/* Etiquetas de estado */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.status-espera { background-color: #fef3c7; color: #92400e; }
+.status-aprobado { background-color: #d1fae5; color: #065f46; }
+.status-rechazado { background-color: #fee2e2; color: #991b1b; }
