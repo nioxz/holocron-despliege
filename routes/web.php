@@ -119,7 +119,10 @@ Route::middleware(['auth', 'verified', \App\Http\Middleware\CheckFirstLogin::cla
         $document = \App\Models\Document::findOrFail($id);
         return view('documents.print', compact('document'));
     })->name('document.print');
-    
+    Route::get('/almacen/catalogo', \App\Livewire\Warehouse\Catalog::class)->name('warehouse.catalog');
+    Route::get('/almacen', function () {
+        return redirect()->route('warehouse.catalog');
+    })->name('warehouse.index');
     Route::get('/exportar-reporte', function () {
         $documents = Document::with(['user', 'supervisor'])->latest()->get();
         $csvFileName = 'Reporte_SST_' . date('d-m-Y') . '.csv';
@@ -134,6 +137,7 @@ Route::middleware(['auth', 'verified', \App\Http\Middleware\CheckFirstLogin::cla
         };
         return Response::stream($callback, 200, $headers);
     })->name('export.csv');
+
 
     Route::view('profile', 'profile')->name('profile');
 });
