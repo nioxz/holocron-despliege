@@ -20,12 +20,11 @@
                 document.documentElement.classList.remove('dark');
             }
         </script>
-    
-    </head>
-    <body class=class="font-sans antialiased bg-gray-100 dark:bg-gray-900 transition-colors duration-300"
-        <div class="min-h-screen bg-gray-100">
-            <livewire:layout.navigation />
 
+    </head>
+    <body class="font-sans antialiased bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
